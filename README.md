@@ -15,11 +15,11 @@ You can use Release Drafter as a [GitHub Action](https://github.com/features/act
 ```workflow
 workflow "Push" {
   on = "push"
-  resolves = ["Draft Release"]
+  resolves = ["Draft Pull Request"]
 }
 
-action "Draft Release" {
-  uses = "toolmantim/release-drafter@v5.2.0"
+action "Draft Pull Request" {
+  uses = "ahuge/PR-drafter"
   secrets = ["GITHUB_TOKEN"]
 }
 ```
