@@ -78,7 +78,7 @@ module.exports = app => {
 
     if (!openPullRequest) {
       log({ app, context, message: 'Creating new draft pull-request' })
-      await context.github.repos.createRelease(
+      await context.github.repos.createPullRequest(
         context.repo({
           title: pullRequestInfo.title,
           head: pullRequestInfo.source,
@@ -89,7 +89,7 @@ module.exports = app => {
       )
     } else {
       log({ app, context, message: 'Updating existing draft release' })
-      await context.github.repos.updateRelease(
+      await context.github.repos.updatePullRequest(
         context.repo({
           release_id: draftRelease.id,
           body: pullRequestInfo.body
