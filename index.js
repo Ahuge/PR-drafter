@@ -10,7 +10,7 @@ const {
 } = require('./lib/sort-pull-requests')
 const log = require('./lib/log')
 
-const configName = 'release-drafter.yml'
+const configName = 'pull-request-drafter.yml'
 
 module.exports = app => {
   app.on('push', async context => {
